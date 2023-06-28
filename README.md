@@ -13,21 +13,21 @@
 
 
 
-  <h4>Seleccionas un tipo de certificado</h4>
+  <h4>Selecciona un tipo de certificado</h4>
  <ul>
     <li>Certificado de Graduación</li>
     <li>Reconocimiento</li>
     <li>Certificado de Participación</li>
  </ul>
   <br>
-  <h4>Ingresas los siguientes datos:</h4>
+  <h4>Ingresa los siguientes datos:</h4>
   <ul>
     <li>Motivo</li>
     <li>Nombre de la Institución</li>
   </ul>
-<h4>Ingresas cantidad de destinatarios</h4>
+<h4>Ingresa cantidad de destinatarios</h4>
  <ul>
-    <li>Ingresas nombre y apellido de los destinatarios</li>
+    <li>Ingresa nombre y apellido de los destinatarios</li>
  </ul>
   <br>
   
