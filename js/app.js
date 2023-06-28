@@ -7,7 +7,7 @@ const arrayTiposDeCertificado=[' de Graduación',' de Reconocimiento',' de Parti
 const arrayFirmas=[' Un Firmante',' Dos Firmantes',' Tres Firmantes'];
 let cantidadDestinatarios=0;
 let continuar;
-let stock;
+let stock=10;
 
 //------CLASE NUEVOCERTIFICADO------------//
 class nuevoCertificado{
@@ -82,7 +82,9 @@ const validacionSoloNumeros = (valor) =>{
 
 //------VALIDACION stock------------//
  const comprobandoStock = (valor) =>{
+
     do {
+
         if (valor < pack && valor < stock ) {
             
             return cantidadDestinatarios= valor;;
@@ -195,7 +197,6 @@ do {
  generandoDestinatarios(cantidadDestinatarios);
 
  stock= pack - cantidadDestinatarios;
- console.log(stock);
 
 //------FUNCIÓN PARA DESTINATARIOS------------//
  function generandoDestinatarios(valor){
