@@ -2,11 +2,12 @@ let opcion;
 const arrayCertificados=[];
 let packDeCertificados;
 let pack=opcion;
-let arrayPacksCertificados=['PACK DE 50 CERTIFICADOS','PACK DE 100 CERTIFICADOS','PACK DE 250 CERTIFICADOS'];
+let arrayPacksCertificados=['PACK DE 10 CERTIFICADOS','PACK DE 100 CERTIFICADOS','PACK DE 250 CERTIFICADOS'];
 const arrayTiposDeCertificado=[' de Graduación',' de Reconocimiento',' de Participación'];
 const arrayFirmas=[' Un Firmante',' Dos Firmantes',' Tres Firmantes'];
 let cantidadDestinatarios=0;
 let continuar;
+let stock;
 
 //------CLASE NUEVOCERTIFICADO------------//
 class nuevoCertificado{
@@ -79,12 +80,29 @@ const validacionSoloNumeros = (valor) =>{
     } while (valor == ''); 
  }
 
+//------VALIDACION stock------------//
+ const comprobandoStock = (valor) =>{
+    do {
+        if (valor < pack && valor < stock ) {
+            
+            return cantidadDestinatarios= valor;;
+        } 
+       else{
+        
+        alert('La cantidad de destinatarios supera su stock de certificados.');
+        valor=validacionSoloNumeros( Number (prompt('Ingrese la cantidad de destinatarios que van a recibir éste certificado')));
+       }
+        return valor;
+
+    } while (valor > pack); 
+ }
+
 /* selección de PACK  */
 
 
  alert('¡ TE DAMOS LA BIENVENIDA !')
     opcion = parseInt(prompt('Seleccione el PACK que quiera:'+ '\n' + '\n' +
-    '1 - PACK DE 50 CERTIFICADOS' + '\n' +
+    '1 - PACK DE 10 CERTIFICADOS' + '\n' +
     '2 - PACK DE 100 CERTIFICADOS' + '\n' +
     '3 - PACK DE 250 CERTIFICADOS' + '\n'));
     
@@ -93,7 +111,7 @@ const validacionSoloNumeros = (valor) =>{
     switch(opcion) {
     
         case 1:
-                pack = 50;
+                pack = 10;
                 break; 
         case 2:
                 pack = 100;
@@ -172,8 +190,12 @@ do {
  alert('Los certificados que estará generando son de: '+ '\n' + '\n' + certificado + '\n' + ' Motivo: por '+ motivo +  '\n' + ' Institución: '+ institucion);
    
  cantidadDestinatarios=validacionSoloNumeros( Number (prompt('Ingrese la cantidad de destinatarios que van a recibir éste certificado')));
-
+ 
+ comprobandoStock(cantidadDestinatarios);
  generandoDestinatarios(cantidadDestinatarios);
+
+ stock= pack - cantidadDestinatarios;
+ console.log(stock);
 
 //------FUNCIÓN PARA DESTINATARIOS------------//
  function generandoDestinatarios(valor){
