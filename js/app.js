@@ -7,7 +7,7 @@ const arrayTiposDeCertificado=[' de Graduación',' de Reconocimiento',' de Parti
 const arrayFirmas=[' Un Firmante',' Dos Firmantes',' Tres Firmantes'];
 let cantidadDestinatarios=0;
 let continuar;
-let stock=10;
+let stock=0;
 
 //------CLASE NUEVOCERTIFICADO------------//
 class nuevoCertificado{
@@ -109,17 +109,20 @@ const validacionSoloNumeros = (valor) =>{
     '3 - PACK DE 250 CERTIFICADOS' + '\n'));
     
     opcion=validacionNumerica(arrayPacksCertificados);
-    
+    stock=10;
     switch(opcion) {
     
         case 1:
                 pack = 10;
+                stock=10;
                 break; 
         case 2:
                 pack = 100;
+                stock=100;
                 break; 
         case 3:
                 pack = 250;
+                stock=250;
                 break;
         default:
                 console.log('No ha seleccionado ninguna opción.');
