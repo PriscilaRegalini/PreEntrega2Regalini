@@ -103,7 +103,7 @@ const validacionSoloNumeros = (valor) =>{
 
 
  alert('¡ TE DAMOS LA BIENVENIDA !')
-    opcion = parseInt(prompt('Seleccione el PACK que quiera:'+ '\n' + '\n' +
+    opcion = parseInt(prompt('Seleccione el PACK que quiera obtener:'+ '\n' + '\n' +
     '1 - PACK DE 10 CERTIFICADOS' + '\n' +
     '2 - PACK DE 100 CERTIFICADOS' + '\n' +
     '3 - PACK DE 250 CERTIFICADOS' + '\n'));
